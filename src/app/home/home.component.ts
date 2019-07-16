@@ -42,7 +42,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
     this.chatService.messages.next(this.message);
  
 
-    this.htmlToAdd = `<div class="${this.i}"> <h1>${this.message.message}</h1></div>`
+    this.htmlToAdd = `<div class="message"> <h1>${this.message.message}</h1></div>`
     
     this.message.message = "";
   }
