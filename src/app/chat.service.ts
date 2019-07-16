@@ -3,7 +3,7 @@ import { Observable, Subject } from "rxjs";
 import { WebsocketService } from "./websocket.service";
 import { map } from 'rxjs/operators'
 
-const CHAT_URL = "ws://echo.websocket.org/";
+const CHAT_URL = "ws://localhost:8080/";
 
 export interface Message {
   author: string;

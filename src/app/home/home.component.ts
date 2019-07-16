@@ -22,6 +22,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
     super();
 
     chatService.messages.subscribe(msg => {
+      this.htmlToAdd = this.htmlToAdd + `<div class="message"> <h1>${msg.message}</h1></div>`
       console.log("Response from websocket: " + msg)
     })
   }
@@ -39,10 +40,10 @@ export class HomeComponent extends BaseComponent implements OnInit {
     this.i = this.i + 1;
 
     console.log("new message from client to websocket: ", this.message);
+    
     this.chatService.messages.next(this.message);
- 
 
-    this.htmlToAdd = `<div class="message"> <h1>${this.message.message}</h1></div>`
+    this.htmlToAdd = this.htmlToAdd + `<div class="message"> <h1>${this.message.message}</h1></div>`
     
     this.message.message = "";
   }
